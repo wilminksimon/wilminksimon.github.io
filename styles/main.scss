@@ -1,6 +1,7 @@
 
 @use "./abstract/variables";
 @use "./abstract/mixins";
+@use "./base/responsive";
 
 @use "./base/reset";
 @use "./base/typography";
@@ -12,4 +13,4 @@
 @use "./components/projects";
 @use "./components/contact";
 @use "./components/footer";
-@use 'base/responsive';
+
