@@ -37,6 +37,24 @@ p {
   color: #687085;
 }
 
+section {
+  padding: 80px 0;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.section-title h2 {
+  font-size: 34px;
+  margin-bottom: 10px;
+}
+
+.section-title p {
+  color: #687085;
+}
+
 header {
   background-color: #ffffff;
   border-bottom: 1px solid #e5e7eb;
@@ -260,6 +278,41 @@ nav {
 
 .project-links a:hover {
   text-decoration: underline;
+}
+
+.contact {
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.contact p {
+  color: #687085;
+  margin-bottom: 25px;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  color: #8991a2;
+  font-size: 14px;
+}
+
+@media (max-width: 650px) {
+  .nav-links {
+    gap: 12px;
+  }
+  .nav-links a {
+    font-size: 12px;
+  }
+  .hero {
+    padding: 80px 0;
+  }
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+  .section-title h2 {
+    font-size: 28px;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
