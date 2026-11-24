@@ -1,0 +1,512 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Simon Wilmink – Frontend Developer. Meine Projekte und Fähigkeiten in der Webentwicklung.">
+    <title>Simon Wilmink | Frontend Developer</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fc;
+            color: #252b3a;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* Navigation */
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #e8eaf0;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 22px 0;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #2563eb;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            font-weight: 600;
+            color: #555d70;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #2563eb;
+        }
+
+        /* Hero */
+
+        .hero {
+            padding: 120px 0 110px;
+            text-align: center;
+        }
+
+        .hero-label {
+            display: inline-block;
+            background-color: #e8efff;
+            color: #2563eb;
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: clamp(38px, 6vw, 64px);
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #2563eb;
+        }
+
+        .hero p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            color: #687085;
+            font-size: 18px;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #2563eb;
+            color: #ffffff;
+            padding: 13px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background-color 0.2s;
+        }
+
+        .button:hover {
+            background-color: #1d4ed8;
+        }
+
+        /* General sections */
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 34px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #687085;
+        }
+
+        /* About */
+
+        .about-content {
+            max-width: 750px;
+            margin: 0 auto;
+            text-align: center;
+            color: #687085;
+            font-size: 17px;
+        }
+
+        /* Skills */
+
+        .skills {
+            background-color: #ffffff;
+        }
+
+        .skills-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .skill {
+            background-color: #f0f3f9;
+            padding: 12px 22px;
+            border-radius: 8px;
+            font-weight: 600;
+            color: #39445b;
+        }
+
+        /* Projects */
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            background-color: #ffffff;
+            border: 1px solid #e8eaf0;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.07);
+        }
+
+        .project-image {
+            height: 190px;
+            background-color: #e8efff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #2563eb;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .project-info {
+            padding: 25px;
+        }
+
+        .project-info h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .project-info p {
+            color: #687085;
+            margin-bottom: 18px;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .project-tags span {
+            background-color: #eef2ff;
+            color: #3659b5;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 20px;
+            color: #2563eb;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .project-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Contact */
+
+        .contact {
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+        .contact p {
+            color: #687085;
+            margin-bottom: 25px;
+        }
+
+        /* Footer */
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: #8991a2;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+
+        @media (max-width: 650px) {
+            .nav-links {
+                gap: 12px;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+            }
+
+            .hero {
+                padding: 80px 0;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">Simon Wilmink.</a>
+
+            <ul class="nav-links">
+                <li><a href="#about">Über mich</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projekte</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="hero">
+            <div class="container">
+                <span class="hero-label">Frontend Developer</span>
+
+                <h1>
+                    Hallo, ich bin <span>Simon.</span>
+                </h1>
+
+                <p>
+                    Ich entwickle moderne und benutzerfreundliche
+                    Webanwendungen und beschäftige mich leidenschaftlich
+                    mit der Webentwicklung.
+                </p>
+
+                <a href="#projects" class="button">
+                    Meine Projekte entdecken
+                </a>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Über mich</h2>
+                    <p>Ein kleiner Einblick in meine Person</p>
+                </div>
+
+                <div class="about-content">
+                    <p>
+                        Ich bin Simon Wilmink und beschäftige mich mit
+                        der Entwicklung moderner Webanwendungen.
+                        Aktuell erweitere ich meine Kenntnisse in der
+                        Softwareentwicklung und arbeite an verschiedenen
+                        eigenen Projekten.
+
+                        Mein Fokus liegt auf Frontend-Technologien wie
+                        JavaScript, TypeScript, HTML und SCSS.
+                        Dabei lerne ich kontinuierlich neue Technologien
+                        kennen und setze mein Wissen praktisch um.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="skills">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Meine Skills</h2>
+                    <p>Technologien, mit denen ich arbeite</p>
+                </div>
+
+                <div class="skills-list">
+                    <span class="skill">HTML</span>
+                    <span class="skill">CSS</span>
+                    <span class="skill">SCSS</span>
+                    <span class="skill">JavaScript</span>
+                    <span class="skill">TypeScript</span>
+                    <span class="skill">Angular</span>
+                    <span class="skill">Git</span>
+                    <span class="skill">GitHub</span>
+                    <span class="skill">Firebase</span>
+                    <span class="skill">Vite</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Meine Projekte</h2>
+                    <p>Eine Auswahl meiner bisherigen Arbeiten</p>
+                </div>
+
+                <div class="project-grid">
+
+                    <article class="project-card">
+                        <div class="project-image">
+                            El Pollo Loco
+                        </div>
+
+                        <div class="project-info">
+                            <h3>El Pollo Loco</h3>
+
+                            <p>
+                                Ein 2D Jump-and-Run-Spiel mit Animationen,
+                                Gegnern, Münzen und verschiedenen
+                                Spielmechaniken.
+                            </p>
+
+                            <div class="project-tags">
+                                <span>JavaScript</span>
+                                <span>HTML</span>
+                                <span>CSS</span>
+                            </div>
+
+                            <div class="project-links">
+                                <a href="https://wilminksimon.github.io/el-pollo-loco/"
+                                   target="_blank" rel="noopener noreferrer">
+                                    Live-Demo →
+                                </a>
+
+                                <a href="https://github.com/wilminksimon/el-pollo-loco"
+                                   target="_blank" rel="noopener noreferrer">
+                                    GitHub →
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-image">
+                            Memory Game
+                        </div>
+
+                        <div class="project-info">
+                            <h3>Memory Game</h3>
+
+                            <p>
+                                Ein Memory-Spiel für zwei Spieler,
+                                entwickelt mit TypeScript, SCSS
+                                und Vite.
+                            </p>
+
+                            <div class="project-tags">
+                                <span>TypeScript</span>
+                                <span>SCSS</span>
+                                <span>Vite</span>
+                            </div>
+
+                            <div class="project-links">
+                                <a href="https://github.com/wilminksimon/memory"
+                                   target="_blank" rel="noopener noreferrer">
+                                    GitHub →
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-image">
+                            Join
+                        </div>
+
+                        <div class="project-info">
+                            <h3>Join – Kanban Board</h3>
+
+                            <p>
+                                Eine Aufgabenverwaltung im Kanban-Stil
+                                zur Organisation und Verwaltung von
+                                Projekten und Aufgaben.
+                            </p>
+
+                            <div class="project-tags">
+                                <span>JavaScript</span>
+                                <span>HTML</span>
+                                <span>Firebase</span>
+                            </div>
+
+                            <div class="project-links">
+                                <a href="https://github.com/wilminksimon/Join"
+                                   target="_blank" rel="noopener noreferrer">
+                                    GitHub →
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Kontakt</h2>
+                    <p>Du möchtest mit mir in Kontakt treten?</p>
+                </div>
+
+                <p>Besuche mich auf GitHub und entdecke meine Projekte.</p>
+
+                <a href="https://github.com/wilminksimon"
+                   target="_blank" rel="noopener noreferrer"
+                   class="button">
+                    Mein GitHub-Profil
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Simon Wilmink. Alle Rechte vorbehalten.</p>
+    </footer>
+
+</body>
+</html>
