@@ -1,0 +1,23 @@
+@use "./variables" as *;
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin transition {
+    transition: all 0.3s ease;
+}
+
+@mixin container {
+    width: 90%;
+    max-width: $container-width;
+    margin: 0 auto;
+}

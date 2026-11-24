@@ -1,0 +1,39 @@
+@use "../abstract/variables" as *;
+
+header {
+    background-color: $background-color;
+    border-bottom: 1px solid $border-color;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 0;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: $primary-color;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-links a {
+    font-size: 14px;
+    font-weight: 600;
+    color: $text-muted;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: $primary-color;
+}
