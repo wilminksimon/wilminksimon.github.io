@@ -298,19 +298,40 @@ footer {
 }
 
 @media (max-width: 650px) {
-  .nav-links {
-    gap: 8px;
-  }
-  .nav-links a {
-    font-size: 11px;
-    white-space: nowrap;
+  nav {
+    flex-direction: column;
+    gap: 15px;
+    padding: 18px 0;
   }
   .logo {
-    font-size: 18px;
+    font-size: 20px;
+    white-space: nowrap;
+  }
+  .nav-links {
+    width: 100%;
+    justify-content: center;
+    gap: 20px;
+  }
+  .nav-links a {
+    font-size: 12px;
     white-space: nowrap;
   }
   .hero {
     padding: 60px 0;
+  }
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+  .hero-text {
+    text-align: center;
+  }
+  .hero-text p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-image img {
+    height: 380px;
   }
   .project-grid {
     grid-template-columns: 1fr;
